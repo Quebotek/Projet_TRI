@@ -7,12 +7,15 @@ services:
         volumes:
             - asterisk_conf:/etc/asterisk
         image: quebotek/monasterisk
-    dns:
+    docker-merlin-dns:
         container_name: c_dns
-        environment:
-            - DNS_DOMAIN=.projet
-            - DNS_IP=10.1.1.2
-        image: docksal/dns
+        cap_add:
+            - NET_ADMIN
+        ports:
+            - 53:53
+            - 53:53/udp
+            - 67:67/udp
+        image: sitipati/docker-merlin-dns
 volumes:
     asterisk_conf:
         external: true
