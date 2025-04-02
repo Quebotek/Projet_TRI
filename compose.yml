@@ -6,7 +6,7 @@ services:
             - 5060:5060/udp
         volumes:
             - asterisk_conf:/etc/asterisk
-        image: asterisk
+        image: quebotek/asterisk
     dnsmasq:
         container_name: c_dns
         ports:
