@@ -1,12 +1,22 @@
-name: asterisk
+name: <your project name>
 services:
-    monasterisk:
-        container_name: c_monasterisk
+    asterisk:
+        container_name: c_asterisk
         ports:
             - 5060:5060/udp
         volumes:
             - asterisk_conf:/etc/asterisk
-        image: quebotek/monasterisk
+        image: asterisk
+    dnsmasq:
+        container_name: c_dns
+        ports:
+            - 53:53/udp
+            - 53:53
+        volumes:
+            - ./dnsmasq.conf:/etc/dnsmasq.conf
+        cap_add:
+            - NET_ADMIN
+        image: andyshinn/dnsmasq
 volumes:
     asterisk_conf:
         external: true
