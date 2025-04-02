@@ -13,7 +13,7 @@ services:
             - 53:53/udp
             - 53:53
         volumes:
-            - dns_conf:/etc/dnsmasq.conf
+            - dns_conf/dnsmasq.conf:/etc/dnsmasq.conf
         cap_add:
             - NET_ADMIN
         image: andyshinn/dnsmasq
