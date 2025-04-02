@@ -1,4 +1,4 @@
-name: <your project name>
+name: Projet_TRI
 services:
     asterisk:
         container_name: c_asterisk
@@ -6,14 +6,14 @@ services:
             - 5060:5060/udp
         volumes:
             - asterisk_conf:/etc/asterisk
-        image: quebotek/monasterisk
+        image: quebotek/asterisk
     dnsmasq:
         container_name: c_dns
         ports:
             - 53:53/udp
             - 53:53
         volumes:
-            - ./dnsmasq.conf:/etc/dnsmasq.conf
+            - dns_conf:/etc/dnsmasq.conf
         cap_add:
             - NET_ADMIN
         image: andyshinn/dnsmasq
@@ -21,3 +21,6 @@ volumes:
     asterisk_conf:
         external: true
         name: asterisk_conf
+    dns_conf:
+        external: true
+        name: dns_conf
