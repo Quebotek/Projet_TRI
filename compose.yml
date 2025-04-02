@@ -5,5 +5,5 @@ services:
         ports:
             - 5060:5060/udp
         volumes:
-            - ./asterisk_conf:/etc/asterisk
+            - asterisk_conf:/etc/asterisk
         image: quebotek/monasterisk
