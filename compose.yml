@@ -1,0 +1,9 @@
+name : Asterisk 
+services:
+  monasterisk:
+    container_name: c_monasterisk
+    volumes:
+      -"./asterisk_conf:/etc/asterisk"
+    ports:
+      - 5060:5060/udp
+    image: quebotek/monasterisk
