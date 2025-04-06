@@ -10,5 +10,5 @@ services:
         image: quebotek/monasterisk
 volumes:
     asterisk_conf:
-        external: true
+        external: false
         name: asterisk_conf
