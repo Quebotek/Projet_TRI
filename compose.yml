@@ -8,6 +8,11 @@ services:
         volumes:
             - asterisk_conf:/etc/asterisk
         image: quebotek/monasterisk
+        networks:
+            - Toip
+networks:
+    Toip:
+        driver: bridge 
 volumes:
     asterisk_conf:
         external: false
