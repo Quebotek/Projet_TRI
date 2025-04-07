@@ -4,7 +4,7 @@ services:
         container_name: c_asterisk
         ports:
             - 5060:5060/udp
-            - 30000-40000:30000-40000/udp
+            - 30000-35000:30000-35000/udp
         volumes:
             - asterisk_conf:/etc/asterisk
         image: quebotek/monasterisk
