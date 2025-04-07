@@ -15,5 +15,5 @@ networks:
         driver: bridge 
 volumes:
     asterisk_conf:
-        external: false
+        external: true
         name: asterisk_conf
