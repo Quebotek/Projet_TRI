@@ -4,13 +4,11 @@ services:
         container_name: c_asterisk
         ports:
             - 5060:5060/udp
-            - 10000-20000:10000-20000/udp
+            - 10000-20000:10000-20000
         volumes:
-            - ./config/sip.conf:/etc/asterisk/sip.conf
-            - ./config/extensions.conf:/etc/asterisk/extensions.conf
+            - asterisk_conf:/etc/asterisk
         image: quebotek/monasterisk
-        networks:
-            - Toip
-networks:
-    Toip:
-        driver: bridge 
+volumes:
+    asterisk_conf:
+        external: false
+        name: asterisk_conf
